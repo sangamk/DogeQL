@@ -1,0 +1,11 @@
+doge taxOfficeExample
+{
+  "Did you sell a house in 2010?" hasSoldHouse: boolean = true
+
+  "Fucking BTC" fuckBTC: integer
+
+   "string q" strQ : string
+   "integer q" intQ : integer
+   "decimal q" decQ : decimal
+   "money q" moneyQ : money
+}

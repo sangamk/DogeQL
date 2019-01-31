@@ -1,20 +1,20 @@
 package lexer
 
-import QuestionareLanguageParser
-import QuestionareLanguageLexer
+import QuestionnaireLanguageGrammarLexer
+import QuestionnaireLanguageGrammarParser
 import org.antlr.v4.runtime.*
 
 class ParserHost(input: String, expectError: Boolean = false) {
 
-    val lexer: QuestionareLanguageLexer
+    val lexer: QuestionnaireLanguageGrammarLexer
     val tokens: CommonTokenStream
-    val parser: QuestionareLanguageParser
+    val parser: QuestionnaireLanguageGrammarParser
 
     init {
         val stream = ANTLRInputStream(input)
-        lexer = QuestionareLanguageLexer(stream)
+        lexer = QuestionnaireLanguageGrammarLexer(stream)
         tokens = CommonTokenStream(lexer)
-        parser = QuestionareLanguageParser(tokens)
+        parser = QuestionnaireLanguageGrammarParser(tokens)
 
         parser.errorHandler = ErrorHandler(expectError)
     }

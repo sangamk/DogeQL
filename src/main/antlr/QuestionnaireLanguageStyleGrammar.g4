@@ -1,19 +1,11 @@
 grammar QuestionnaireLanguageStyleGrammar;
 
 stylesheet
-    : STYLESHEET NAME pages
-    ;
-
-pages
-    : LBRACE page* RBRACE
+    : STYLESHEET NAME LBRACE page* RBRACE
     ;
 
 page
-    : PAGE NAME styles
-    ;
-
-styles
-    : LBRACE style* RBRACE
+    : PAGE NAME LBRACE style* RBRACE
     ;
 
 style
@@ -22,16 +14,12 @@ style
     ;
 
 section
-    : SECTION LIT_STRING elements
-    ;
-
-elements
-    : LBRACE element* RBRACE
-    | element
+    : SECTION LIT_STRING element
     ;
 
 element
-    : question
+    : LBRACE element* RBRACE
+    | question
     | defaultAttributes
     | section
     ;

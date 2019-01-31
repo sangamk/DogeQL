@@ -1,11 +1,21 @@
-doge taxOfficeExample
+form taxOfficeExample
 {
-  "Did you sell a house in 2010?" hasSoldHouse: boolean = true
+  "Did you sell a house in 2010?"
+    hasSoldHouse: boolean
+  "Did you buy a house in 2010?"
+    hasBoughtHouse: boolean
+  "Did you enter a loan?"
+    hasMaintLoan: boolean
 
-  "Fucking BTC" fuckBTC: integer
+  if (hasSoldHouse)
+  {
+    "What was the selling price?"
+      sellingPrice: decimal
+    "Private debts for the sold house:"
+      privateDebt: decimal
+    "Value residue:"
+      valueResidue: decimal =
+        (sellingPrice - privateDebt)
+  }
 
-   "string q" strQ : string
-   "integer q" intQ : integer
-   "decimal q" decQ : decimal
-   "money q" moneyQ : money
 }
